@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdatavolume:/var/lib/postgresql/data
+    networks:
+      - bridge
+
+  redis:
+    image: "redis"
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - bridge
+
+  pgadmin:
+    image: dpage/pgadmin4:8
+    container_name: pgadmin
+    ports:
+      - "5433:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: malcodantas18@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    networks:
+      - bridge
+
+volumes:
+  pgdatavolume:
+
+networks:
+  bridge:
+    driver: bridge

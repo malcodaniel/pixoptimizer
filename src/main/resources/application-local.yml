@@ -1,0 +1,21 @@
+spring:
+  docker:
+    compose:
+      lifecycle-management: start_only
+  output:
+    ansi:
+      enabled: ALWAYS
+  application:
+    name: PixOptimizer
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pixoptimizer
+    username: postgres
+    password: root
+  session:
+    jdbc:
+      initialize-schema: always
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    show-sql: false
