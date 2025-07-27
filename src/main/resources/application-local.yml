@@ -19,3 +19,6 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: false
+
+application:
+  jwtSecret: ${CARONTE_JWT_SECRET:my-secret-key}
