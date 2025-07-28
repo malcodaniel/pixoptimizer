@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
 @Service
-public class TokenService {
+public class JwtTokenService {
     @Value("${application.jwtSecret}")
     private String secret;
 
