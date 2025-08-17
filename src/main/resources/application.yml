@@ -4,3 +4,6 @@ spring:
       enabled: ALWAYS
   application:
     name: PixOptimizer
+server:
+  servlet:
+    context-path: /api
