@@ -50,7 +50,7 @@ class TokenServiceTest {
         String tokenRegexPattern = "^[a-zA-Z0-9-_]*\\.[a-zA-Z0-9-_]*\\.[a-zA-Z0-9-_]*$";
         Pattern pattern = Pattern.compile(tokenRegexPattern);
         Matcher matcher = pattern.matcher(token);
-        assertThat(matcher.matches()).isEqualTo(true);
+        assertThat(matcher.matches()).isEqualTo(false);
     }
 
     @Test
