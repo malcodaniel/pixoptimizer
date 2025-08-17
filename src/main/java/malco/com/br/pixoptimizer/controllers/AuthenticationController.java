@@ -4,7 +4,7 @@ import malco.com.br.pixoptimizer.models.Account;
 import malco.com.br.pixoptimizer.models.dtos.AuthenticationDTO;
 import malco.com.br.pixoptimizer.models.dtos.LoginSuccessResponseDTO;
 import malco.com.br.pixoptimizer.repositories.AccountRepository;
-import malco.com.br.pixoptimizer.services.TokenService;
+import malco.com.br.pixoptimizer.services.JwtTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,7 +25,7 @@ public class AuthenticationController {
     private AccountRepository accountRepository;
 
     @Autowired
-    private TokenService tokenService;
+    private JwtTokenService tokenService;
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody AuthenticationDTO credentials) {

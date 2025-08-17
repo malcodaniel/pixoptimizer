@@ -5,7 +5,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import malco.com.br.pixoptimizer.repositories.AccountRepository;
-import malco.com.br.pixoptimizer.services.TokenService;
+import malco.com.br.pixoptimizer.services.JwtTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,9 +16,9 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 @Component
-public class SecurityFilter extends OncePerRequestFilter {
+public class JwtSecurityFilter extends OncePerRequestFilter {
     @Autowired
-    TokenService tokenService;
+    JwtTokenService tokenService;
     @Autowired
     AccountRepository accountRepository;
 
