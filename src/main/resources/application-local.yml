@@ -22,3 +22,13 @@ spring:
 
 application:
   jwtSecret: ${CARONTE_JWT_SECRET:my-secret-key}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # In production use only 'health' and 'info'
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
